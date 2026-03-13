@@ -1,7 +1,9 @@
 body{
-    background: linear-gradient(260deg, #6dbdc6, #c7e8ee);
-    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+    position: relative;
+    background: linear-gradient(260deg, #349eaa, #cdeaef);
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     color: #16343a;
+    overscroll-behavior: none;
 }
 
 p{
@@ -16,20 +18,23 @@ h1, h2{
 
 
 img{
-   width: 350px;
+   width: 325px;
    float:right;
    border-radius: 10px;
-   margin-right: 15px;
+   margin: 15px;
    box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
+   position: absolute;
+}
+
+#drumimage{
+    right: 20px;
+    top: 150px;
 }
 
 .dblwidth {
-    width:500px;
+    width:380px;
 }
 
-.mdlwidth {
-    width:420px;
-}
 
 
 h1{
@@ -45,6 +50,7 @@ h2{
 h3{ 
     color: black;
     font-size: 25px;
+    clear: both;
 }
 
 h1, h2{
@@ -52,6 +58,39 @@ h1, h2{
 }
 
 #familypic{
-    float: left;
+    left: 20px;
+    top: 575px; /* adjust based on where My Dreams section starts */
 }
 
+#friendspic{
+    right: 20px;
+    top: 975px;
+}
+
+.gold{
+    color: rgb(255, 174, 0); 
+    font-style: italic;
+}
+
+#container{
+    width: 575px;
+    margin:0 auto;
+    background: linear-gradient(180deg, rgba(255,255,255,0.25), rgba(255,255,255,0.1));
+    backdrop-filter: blur(6px);
+    padding: 20px 40px;
+    border-radius: 16px;
+}
+
+a:link{
+    font-weight: bold;
+    text-decoration: none;
+    color: #7eeaea;
+}
+
+a:visited{
+    color: #4ab8b8; 
+}
+
+a:hover{
+    text-decoration: underline;
+}
