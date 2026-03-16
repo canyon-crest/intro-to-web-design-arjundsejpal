@@ -18,7 +18,7 @@ h1, h2{
 
 
 img{
-   width: 325px;
+   width: 335px;
    float:right;
    border-radius: 10px;
    margin: 15px;
@@ -30,11 +30,10 @@ img{
     width:380px;
 }
 
-
-
-h1{
-    color: black;
-    font-size:48px;
+h1 {
+    color: #0d2b30;
+    font-size: 52px;
+    letter-spacing: -1px;
 }
 
 h2{
@@ -48,35 +47,39 @@ h3{
     clear: both;
 }
 
-h1, h2{
+h1, h2, h3{
     font-family: 'Segoe UI', sans-serif;
 }
 
 
 
-.gold{
-    color: rgb(255, 174, 0); 
+.gold {
+    color: rgb(255, 174, 0);
     font-style: italic;
-    font-weight: bold;
+    font-weight: 600;
+    letter-spacing: 1px;
 }
 
-#container{
-    width: 850px;
-    margin:0 auto;
-    background: linear-gradient(180deg, rgba(255,255,255,0.25), rgba(255,255,255,0.1));
-    backdrop-filter: blur(6px);
-    padding: 20px 40px;
-    border-radius: 16px;
+#container {
+    width: 950px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 30px 50px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
 }
 
 a:link{
     font-weight: bold;
     text-decoration: none;
-    color: #7eeaea;
+    color: #1a3a6b;
 }
 
 a:visited{
-    color: #4ab8b8; 
+    color: #4a5a8a;
 }
 
 a:hover{
@@ -84,26 +87,24 @@ a:hover{
 }
 
 #sidebar {
-    float: left;
-    width: 160px;
-    background: linear-gradient(180deg, #16343a, #1e4a52);
-    border-radius: 4px;
+    width: 150px;
+    margin: 8px 0 15px 18px;
+    background: #111111;
+    border-radius: 12px;
     padding: 20px 18px;
-    margin: 0 20px 15px 0;
-    border-top: 6px solid rgb(255, 174, 0);
-    box-shadow: 3px 3px 0px rgba(0,0,0,0.3);
-    font-family: 'Courier New', Courier, monospace;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+    font-family: 'Segoe UI', sans-serif;
 }
 
 #sidebar h4 {
     margin: 0 0 14px 0;
-    font-size: 11px;
+    font-size: 10px;
     font-weight: 700;
-    color: rgb(255, 174, 0);
+    color: rgba(255, 255, 255, 0.4);
     text-transform: uppercase;
-    letter-spacing: 2px;
-    border-bottom: 1px solid #2a5560;
+    letter-spacing: 2.5px;
     padding-bottom: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 #sidebar ul {
@@ -115,10 +116,11 @@ a:hover{
 #sidebar li {
     font-size: 13px;
     line-height: 1.4em;
-    margin-bottom: 12px;
-    color: #cdeaef;
-    border-bottom: 1px dashed #2a5560;
-    padding-bottom: 12px;
+    margin-bottom: 10px;
+    color: #ffffff;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    font-weight: 500;
 }
 
 #sidebar li:last-child {
@@ -127,25 +129,11 @@ a:hover{
     padding-bottom: 0;
 }
 
-#sidebar li::before {
-    content: "▶ ";
-    color: rgb(255, 174, 0);
-    font-size: 9px;
-}
 
-.intro {
-    border-left: 3px solid rgba(255,174,0,0.5);
-    padding-left: 10px;
-}
 
-.dreams {
-    border-left: 3px solid rgba(78,184,184,0.5);
-    padding-left: 10px;
-}
-
-.friends {
-    border-left: 3px solid rgba(255,174,0,0.5);
-    padding-left: 10px;
+.intro, .dreams, .friends {
+    border-left: 2px solid rgba(22, 52, 58, 0.15);
+    padding-left: 12px;
 }
 
 #friendspic {
@@ -201,4 +189,77 @@ a:hover{
     h2 {
         font-size: 26px;
     }
+}
+
+#familypic {
+    margin-bottom: 0;
+    width: 340px;
+}
+
+.dreams {
+    overflow: hidden;
+}
+
+#filmsidebar {
+    width: 150px;
+    background: #111111;
+    border-radius: 12px;
+    padding: 20px 18px;
+    margin: 8px 0 15px 18px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+    font-family: 'Segoe UI', sans-serif;
+}
+
+#filmsidebar h4 {
+    margin: 0 0 14px 0;
+    font-size: 10px;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.4);
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+#filmsidebar ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+#filmsidebar li {
+    font-size: 13px;
+    line-height: 1.4em;
+    margin-bottom: 10px;
+    color: #ffffff;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    font-weight: 500;
+}
+
+#filmsidebar li:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+#sidebar-group {
+    float: right;
+    width: 175px;
+    margin: 0 20px 15px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+#sidebar, #filmsidebar {
+    width: 100%;
+    margin: 0;
+    float: none;
+    clear: none;
+}
+
+#drumimage {
+    float: left;
+    margin: 0 18px 15px 0;
 }
