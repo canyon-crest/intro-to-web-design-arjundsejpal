@@ -1,20 +1,26 @@
 body{
     position: relative;
-    background: linear-gradient(260deg, #349eaa, #cdeaef);
+    background: linear-gradient(260deg, #349eaa, #cdeaef, #7ecfcf, #349eaa);
+    background-size: 300% 300%;
+    animation: gradientShift 8s ease infinite;
     font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     color: #16343a;
     overscroll-behavior: none;
+    scroll-behavior: smooth;
 }
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
 
 p{
     line-height: 1.6em;
     font-size: 17px;
 }
 
-h1, h2{ 
-    text-align: center;
-    line-height: 0.5em;
-}
 
 
 img{
@@ -23,8 +29,13 @@ img{
    border-radius: 10px;
    margin: 15px;
    box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
+   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+img:hover {
+    transform: scale(1.03);
+    box-shadow: 0px 8px 20px rgba(0,0,0,0.4);
+}
 
 .dblwidth {
     width:380px;
@@ -34,11 +45,13 @@ h1 {
     color: #0d2b30;
     font-size: 52px;
     letter-spacing: -1px;
+    text-align: center;
 }
 
-h2{
+h2 {
     color: black;
-    font-size:40px;
+    font-size: 40px;
+    text-align: center;
 }
 
 h3{ 
@@ -51,13 +64,23 @@ h1, h2, h3{
     font-family: 'Segoe UI', sans-serif;
 }
 
+h1, h2 {
+    text-align: center;
+    line-height: 0.5em;
+}
 
 
-.gold {
-    color: rgb(255, 174, 0);
+.spaced {
     font-style: italic;
-    font-weight: 600;
+    font-weight: 500;
     letter-spacing: 1px;
+}
+
+.spaced:hover {
+    background: linear-gradient(90deg, #ff6b6b, #ffa500, #ffd700, #7ed957, #7ec8e3, #a78bfa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 #container {
@@ -66,7 +89,7 @@ h1, h2, h3{
     background: rgba(255, 255, 255, 0.18);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    padding: 30px 50px;
+    padding: 40px 50px 30px 50px;
     border-radius: 20px;
     border: 1px solid rgba(255, 255, 255, 0.4);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
@@ -132,7 +155,7 @@ a:hover{
 
 
 .intro, .dreams, .friends {
-    border-left: 2px solid rgba(22, 52, 58, 0.15);
+    border-left: 2px solid rgba(22, 52, 58, 0.35);
     padding-left: 12px;
 }
 
@@ -197,7 +220,11 @@ a:hover{
 }
 
 .dreams {
-    overflow: hidden;
+    overflow: visible;
+}
+
+.friends {
+    overflow: visible;
 }
 
 #filmsidebar {
@@ -252,14 +279,95 @@ a:hover{
     gap: 12px;
 }
 
-#sidebar, #filmsidebar {
-    width: 100%;
-    margin: 0;
-    float: none;
-    clear: none;
-}
 
 #drumimage {
     float: left;
     margin: 0 18px 15px 0;
+}
+
+#sidebar-group {
+    transition: none;
+}
+
+#sidebar {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#filmsidebar {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#sidebar:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
+#filmsidebar:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
+@keyframes containerGlow {
+    0% { box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1), 0 0 15px rgba(52, 158, 170, 0.3); }
+    50% { box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1), 0 0 30px rgba(52, 158, 170, 0.6); }
+    100% { box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1), 0 0 15px rgba(52, 158, 170, 0.3); }
+}
+
+#container {
+    animation: containerGlow 3s ease infinite;
+}
+
+.flip-card {
+    perspective: 1000px;
+    width: 175px;
+    height: 220px;
+}
+
+.flip-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s ease;
+    transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-front, .flip-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    background: #111111;
+    border-radius: 12px;
+    padding: 20px 18px;
+    box-sizing: border-box;
+}
+
+.flip-back {
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: #1e4a52;
+}
+
+.flip-back h4 {
+    color: rgb(255, 174, 0);
+    font-size: 13px;
+    margin-bottom: 12px;
+}
+
+.flip-back p {
+    color: #cdeaef;
+    font-size: 12px;
+    line-height: 1.6em;
+    opacity: 1;
+    animation: none;
+    border: none;
+    padding: 0;
 }
