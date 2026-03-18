@@ -193,7 +193,7 @@ a:hover{
 
 @media (max-width: 768px) {
     #container, body {
-        width: 100%;
+        width: 97%;
         margin: 0 auto;
         padding: 4px;
     }
@@ -205,6 +205,7 @@ a:hover{
         width: 95%;
         margin: 0 auto;
         padding: 10px;
+    
     }
     h1 {
         font-size: 32px;
@@ -315,6 +316,7 @@ a:hover{
 
 #container {
     animation: containerGlow 3s ease infinite;
+    box-sizing: border-box;
 }
 
 .flip-card {
