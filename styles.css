@@ -197,8 +197,8 @@ a:hover{
         margin: 0 auto;
         padding: 4px;
     }
-    #sidebar {
-        display: none;
+    #sidebar-group {
+        display: none !important;
     }
     img, #friendspic {
         float: none;
